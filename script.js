@@ -64,60 +64,134 @@ document.getElementById("dateOutput").innerHTML = dateMessage;
 //    id="numberConversionOutput"
 
 
-var firstval = "67";
-var secondval = "91"
-var thirdval = "72.9"
-var forthval = "word"
+var firstVal = "67";         // creating my variables for numbers
+var secondVal = "91";
+var thirdVal = "72.9";
+var forthVal = "word";
 
 
-var firstinput = number(firstval);
-var secondinput = number(secondval);
-var thirdinput = number(thirdval);
-var forthinput = number(forthval);
+var firstInput = Number(firstVal); // checking if the variables are numbers
+var secondInput = Number(secondVal);
+var thirdInput = Number(thirdVal);
+var forthInput = Number(forthVal);
 
 
-var firstnan = number.isNaN(firstinput);
-var secondnan = number.isNaN(secondinput); 
-var thirdnan = number.isNaN(thirdinput);
-var forthnan = number.isNaN(forthinput); 
+var firstNan = Number.isNaN(firstInput);      // checking if the variables are NaN
+var secondNan = Number.isNaN(secondInput); 
+var thirdNan = Number.isNaN(thirdInput);
+var forthNan = Number.isNaN(forthInput); 
 
-var firstint = number.isInteger(firstinput);
-var secondint = number.isInteger(secondinput);
-var thirdint = number.isInteger(thirdinput);
-var forthint = number.isInteger(forthinput);
+var firstInt = Number.isInteger(firstInput);  // checking if the variables are integers 
+var secondInt = Number.isInteger(secondInput);
+var thirdInt = Number.isInteger(thirdInput);
+var forthInt = Number.isInteger(forthInput);
 
 //-----------------------------
 
+//  Message string per variable 
+
+var firstResult = "Original: '" + firstVal + "' -> Converted: " + firstInput + " -> isNaN: " + firstNan + " -> isInteger: " + firstInt; 
+
+var secondResult = "Original: '" + secondVal + "' -> Converted: " + secondInput + " -> isNaN: " + secondNan + " -> isInteger: " + secondInt; 
+
+var thirdResult = "Original: '" + thirdVal + "' -> Converted: " + thirdInput + " -> isNaN: " + thirdNan + " -> isInteger: " + thirdInt; 
+
+var forthResult = "Original: '" + forthVal + "' -> Converted: " + forthInput + " -> isNaN: " + forthNan + " -> isInteger: " + forthInt; 
 
 
+//------------------------------
+
+//----- checking for variable conditions, which then are added to the message string for each variable.
+//----- This is a bit redundant, since i already know what variables are NaN and which are integers (eg i know firstval is
+// a number and an integer and I can place static code for it), but in case someone or myself changes the values this will work with no problems. 
+
+//---- additionally, NaN will always be false when it is a valid number. this is because NaN means "Not a Number".
+// so for a number to be valid, NaN must be false... from here I made an If statement to check if a number is not a number print
+// "this is not a valid number value" and if not... Not a number, print "this is a valid number value".  Flip this logic for integer check if. 
 
 
-
-
-if (firstnan) {
-     firstresult = firstresult + " (This is not a valid number value.)"; 
+if (firstNan) {
+     firstResult = firstResult + " (This is not a valid number value.)"; 
 }
      else {
 
-     firstresult = firstresult + " (This is a valid number value.)";
+     firstResult = firstResult + " (This is a valid number value.)";
 
 }
 
-if (firstint) {
-      firstresult = firstresult + " (This is not a valid Integer value.)"; 
+if (firstInt) {
+      firstResult = firstResult + " (This is  a valid Integer value.)"; 
 }
      else {
 
-     firstresult = firstresult + " (This is a valid Integer value." 
+     firstResult = firstResult + " (This is not a valid Integer value.)"; 
 
 }
 
 
 
-// fix the int and nan 
+if (secondNan) {
+     secondResult = secondResult + " (This is not a valid number value.)"; 
+}
+     else {
+
+     secondResult = secondResult + " (This is a valid number value.)";
+
+}
+
+if (secondInt) {
+      secondResult = secondResult + " (This is a valid Integer value.)"; 
+}
+     else {
+
+     secondResult = secondResult + " (This is not a valid Integer value.)"; 
+
+}
+
+
+if (thirdNan) {
+     thirdResult = thirdResult + " (This is not avalid number value.)"; 
+}
+     else {
+
+     thirdResult = thirdResult + " (This is a valid number value.)";
+
+}
+
+if (thirdInt) {
+      thirdResult = thirdResult + " (This is a valid Integer value.)"; 
+}
+     else {
+
+     thirdResult = thirdResult + " (This is not a valid Integer value.)"; 
+
+}
 
 
 
+if (forthNan) {
+     forthResult = forthResult + " (This is not a valid number value.)"; 
+}
+     else {
+
+     forthResult = forthResult + " (This is a valid number value.)";
+
+}
+
+if (forthInt) {
+      forthResult = forthResult + " (This is a valid Integer value.)"; 
+}
+     else {
+
+     forthResult = forthResult + " (This is not a valid Integer value.)"; 
+
+}
+
+
+var messageline = firstResult + "<br>" + secondResult + "<br>" + thirdResult + "<br>" + forthResult; // this combines all the message strings into one string. The BR instructs html to format line breaks/indiv lines. 
+
+
+document.getElementById("numberConversionOutput").innerHTML = messageline;
 
 
 // ==========================
@@ -141,6 +215,66 @@ if (firstint) {
 //
 // 5. Display the results inside the element with id="mathOutput"
 
+//---------------------------------------------------------------------------
+ 
+// #### Option B: Grade score calculator
+
+//Use values like:
+
+//- grade scores
+
+//Then calculate:
+
+//- total score
+//- average score
+
+//Display the average with `toFixed(2)`.
+
+
+// first use grade score + 5 "extra credit" points then output total score... then add 9 var vals (to make it like a class of 10 students) 
+// + our score divided by 10 to get average grade.. for a test.
+
+// I will use a script method I learned from a youtube video. https://www.youtube.com/watch?v=JeXqaKeJSRI
+
+var userInput;
+
+
+document.getElementById("submitval").onclick = function() {
+
+     userInput = document.getElementById("userval").value;
+
+     if (!isNaN(userInput)) {      
+               var exVal = Number(userInput) + 5;
+
+               var messageline1 = "Your score with 5 extra credit points is: " +exVal.toFixed(2) + "<br>";
+
+               document.getElementById("mathOutput").innerHTML = messageline1;
+
+
+               var classAvg = (exVal + 90 + 85 + 78 + 92 + 88 + 95 + 73 + 42 + 65) / 10;
+               
+               var messageline2 = "The class average is: " + classAvg.toFixed(2) + "<br>";
+
+               document.getElementById("classScore").innerHTML = messageline2;    
+               
+                document.getElementById("error").innerHTML = "";  
+
+     }    
+
+          else{
+              var errormessage = "Error: " + userInput + " is not a valid number value. Enter a valid number value!";
+               document.getElementById("error").innerHTML = errormessage;
+
+                document.getElementById("mathOutput").innerHTML = ""; 
+                document.getElementById("classScore").innerHTML = ""; 
+
+
+          }
+
+     
+
+
+}; 
 // ==========================
 // Part 4: Conditionals
 // ==========================
