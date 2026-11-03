@@ -63,6 +63,63 @@ document.getElementById("dateOutput").innerHTML = dateMessage;
 // 5. Display the final result inside the element:
 //    id="numberConversionOutput"
 
+
+var firstval = "67";
+var secondval = "91"
+var thirdval = "72.9"
+var forthval = "word"
+
+
+var firstinput = number(firstval);
+var secondinput = number(secondval);
+var thirdinput = number(thirdval);
+var forthinput = number(forthval);
+
+
+var firstnan = number.isNaN(firstinput);
+var secondnan = number.isNaN(secondinput); 
+var thirdnan = number.isNaN(thirdinput);
+var forthnan = number.isNaN(forthinput); 
+
+var firstint = number.isInteger(firstinput);
+var secondint = number.isInteger(secondinput);
+var thirdint = number.isInteger(thirdinput);
+var forthint = number.isInteger(forthinput);
+
+//-----------------------------
+
+
+
+
+
+
+
+if (firstnan) {
+     firstresult = firstresult + " (This is not a valid number value.)"; 
+}
+     else {
+
+     firstresult = firstresult + " (This is a valid number value.)";
+
+}
+
+if (firstint) {
+      firstresult = firstresult + " (This is not a valid Integer value.)"; 
+}
+     else {
+
+     firstresult = firstresult + " (This is a valid Integer value." 
+
+}
+
+
+
+// fix the int and nan 
+
+
+
+
+
 // ==========================
 // Part 3: Math & Formatting
 // ==========================
