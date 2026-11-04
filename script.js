@@ -18,7 +18,7 @@ var dateMessage = "Today is " + date.toLocaleDateString('en-US', { month: '2-dig
 document.getElementById("dateOutput").innerHTML = dateMessage;
 
 //Source | 
-     //  v  I was helped by one commentor with this simple solution. This was the most easiest one to understand and implement. 
+//  v  I was helped by one commentor with this simple solution. This was the most easiest one to understand and implement. 
 //https://stackoverflow.com/questions/6040515/how-do-i-get-month-and-date-of-javascript-in-2-digit-format
 
 //https://www.w3schools.com/html/html_id.asp ----- used to create my message to display on the html side of the hw. 
@@ -77,9 +77,9 @@ var forthInput = Number(forthVal);
 
 
 var firstNan = Number.isNaN(firstInput);      // checking if the variables are NaN
-var secondNan = Number.isNaN(secondInput); 
+var secondNan = Number.isNaN(secondInput);
 var thirdNan = Number.isNaN(thirdInput);
-var forthNan = Number.isNaN(forthInput); 
+var forthNan = Number.isNaN(forthInput);
 
 var firstInt = Number.isInteger(firstInput);  // checking if the variables are integers 
 var secondInt = Number.isInteger(secondInput);
@@ -90,13 +90,13 @@ var forthInt = Number.isInteger(forthInput);
 
 //  Message string per variable 
 
-var firstResult = "Original: '" + firstVal + "' -> Converted: " + firstInput + " -> isNaN: " + firstNan + " -> isInteger: " + firstInt; 
+var firstResult = "Original: '" + firstVal + "' -> Converted: " + firstInput + " -> isNaN: " + firstNan + " -> isInteger: " + firstInt;
 
-var secondResult = "Original: '" + secondVal + "' -> Converted: " + secondInput + " -> isNaN: " + secondNan + " -> isInteger: " + secondInt; 
+var secondResult = "Original: '" + secondVal + "' -> Converted: " + secondInput + " -> isNaN: " + secondNan + " -> isInteger: " + secondInt;
 
-var thirdResult = "Original: '" + thirdVal + "' -> Converted: " + thirdInput + " -> isNaN: " + thirdNan + " -> isInteger: " + thirdInt; 
+var thirdResult = "Original: '" + thirdVal + "' -> Converted: " + thirdInput + " -> isNaN: " + thirdNan + " -> isInteger: " + thirdInt;
 
-var forthResult = "Original: '" + forthVal + "' -> Converted: " + forthInput + " -> isNaN: " + forthNan + " -> isInteger: " + forthInt; 
+var forthResult = "Original: '" + forthVal + "' -> Converted: " + forthInput + " -> isNaN: " + forthNan + " -> isInteger: " + forthInt;
 
 
 //------------------------------
@@ -111,79 +111,79 @@ var forthResult = "Original: '" + forthVal + "' -> Converted: " + forthInput + "
 
 
 if (firstNan) {
-     firstResult = firstResult + " (This is not a valid number value.)"; 
+     firstResult = firstResult + " (This is not a valid number value.)";
 }
-     else {
+else {
 
      firstResult = firstResult + " (This is a valid number value.)";
 
 }
 
 if (firstInt) {
-      firstResult = firstResult + " (This is  a valid Integer value.)"; 
+     firstResult = firstResult + " (This is  a valid Integer value.)";
 }
-     else {
+else {
 
-     firstResult = firstResult + " (This is not a valid Integer value.)"; 
+     firstResult = firstResult + " (This is not a valid Integer value.)";
 
 }
 
 
 
 if (secondNan) {
-     secondResult = secondResult + " (This is not a valid number value.)"; 
+     secondResult = secondResult + " (This is not a valid number value.)";
 }
-     else {
+else {
 
      secondResult = secondResult + " (This is a valid number value.)";
 
 }
 
 if (secondInt) {
-      secondResult = secondResult + " (This is a valid Integer value.)"; 
+     secondResult = secondResult + " (This is a valid Integer value.)";
 }
-     else {
+else {
 
-     secondResult = secondResult + " (This is not a valid Integer value.)"; 
+     secondResult = secondResult + " (This is not a valid Integer value.)";
 
 }
 
 
 if (thirdNan) {
-     thirdResult = thirdResult + " (This is not avalid number value.)"; 
+     thirdResult = thirdResult + " (This is not avalid number value.)";
 }
-     else {
+else {
 
      thirdResult = thirdResult + " (This is a valid number value.)";
 
 }
 
 if (thirdInt) {
-      thirdResult = thirdResult + " (This is a valid Integer value.)"; 
+     thirdResult = thirdResult + " (This is a valid Integer value.)";
 }
-     else {
+else {
 
-     thirdResult = thirdResult + " (This is not a valid Integer value.)"; 
+     thirdResult = thirdResult + " (This is not a valid Integer value.)";
 
 }
 
 
 
 if (forthNan) {
-     forthResult = forthResult + " (This is not a valid number value.)"; 
+     forthResult = forthResult + " (This is not a valid number value.)";
 }
-     else {
+else {
 
      forthResult = forthResult + " (This is a valid number value.)";
 
 }
 
 if (forthInt) {
-      forthResult = forthResult + " (This is a valid Integer value.)"; 
+     forthResult = forthResult + " (This is a valid Integer value.)";
 }
-     else {
+else {
 
-     forthResult = forthResult + " (This is not a valid Integer value.)"; 
+     forthResult = forthResult + " (This is not a valid Integer value.)";
 
 }
 
@@ -216,7 +216,7 @@ document.getElementById("numberConversionOutput").innerHTML = messageline;
 // 5. Display the results inside the element with id="mathOutput"
 
 //---------------------------------------------------------------------------
- 
+
 // #### Option B: Grade score calculator
 
 //Use values like:
@@ -238,43 +238,65 @@ document.getElementById("numberConversionOutput").innerHTML = messageline;
 
 var userInput;
 
+// defining the numeric values to use in the following calculations. 
 
-document.getElementById("submitval").onclick = function() {
+var extraCredit = 5;
+
+var classScores = 90 + 85 + 78 + 92 + 88 + 95 + 73 + 42 + 65;
+
+var numStudents = 10;
+
+document.getElementById("submitval").onclick = function () {
 
      userInput = document.getElementById("userval").value;
 
-     if (!isNaN(userInput)) {      
-               var exVal = Number(userInput) + 5;
+     if (userInput !== "" && !isNaN(userInput)) {      // if statement checks for a user input, if theres an input it continues to run.  
+          var exVal = Number(userInput) + extraCredit; // defines the new score by adding the extra credit to the user's input value
 
-               var messageline1 = "Your score with 5 extra credit points is: " +exVal.toFixed(2) + "<br>";
+          var messageLine1 = "Your score with " + extraCredit + " extra credit points is: " + exVal.toFixed(2) + "<br>";
 
-               document.getElementById("mathOutput").innerHTML = messageline1;
+          document.getElementById("mathOutput").innerHTML = messageLine1;
 
 
-               var classAvg = (exVal + 90 + 85 + 78 + 92 + 88 + 95 + 73 + 42 + 65) / 10;
-               
-               var messageline2 = "The class average is: " + classAvg.toFixed(2) + "<br>";
+          var classAvg = (exVal + classScores) / numStudents;  // defines the class avg, calculates the avg by adding the new user score with the rest of the classes scores divided by # students. 
 
-               document.getElementById("classScore").innerHTML = messageline2;    
-               
-                document.getElementById("error").innerHTML = "";  
+          var messageLine2 = "The class average is: " + classAvg.toFixed(2) + "<br>";
 
-     }    
+          document.getElementById("classScore").innerHTML = messageLine2;
 
-          else{
-              var errormessage = "Error: " + userInput + " is not a valid number value. Enter a valid number value!";
-               document.getElementById("error").innerHTML = errormessage;
+          document.getElementById("error").innerHTML = "";  // clears the error message if the user previously had an error. I was annoyed by the error stickyness. 
 
-                document.getElementById("mathOutput").innerHTML = ""; 
-                document.getElementById("classScore").innerHTML = ""; 
+     }
+
+     else {    // is the else statement that runs when a user enters a non-numeric value like a word or blank space. 
+              // additionally, There is a nested IF, checking wheter the user input is blank or a string. and returned specfic error messages for each. 
+          if (userInput === "") {
+
+               var errorMessage = "Error: " + "Please do not enter a blank value. Enter a valid number value!";
+
+               document.getElementById("error").innerHTML = errorMessage;
 
 
           }
 
-     
+          else {
+
+               var errorMessage = "Error: " + userInput + " is not a valid number value. Enter a valid number value!";
+               document.getElementById("error").innerHTML = errorMessage;
+
+          }
 
 
-}; 
+          document.getElementById("mathOutput").innerHTML = "";  // clears math output of the users previous calculations
+          document.getElementById("classScore").innerHTML = "";
+
+
+     }
+
+
+
+
+};
 // ==========================
 // Part 4: Conditionals
 // ==========================
