@@ -20,7 +20,7 @@ document.getElementById("dateOutput").innerHTML = dateMessage;
 //Source | 
 //  v  I was helped by one commentor with this simple solution. This was the most easiest one to understand and implement. 
 //https://stackoverflow.com/questions/6040515/how-do-i-get-month-and-date-of-javascript-in-2-digit-format
-
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString#using_options
 //https://www.w3schools.com/html/html_id.asp ----- used to create my message to display on the html side of the hw. 
 
 
