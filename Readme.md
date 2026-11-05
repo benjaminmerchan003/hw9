@@ -16,3 +16,17 @@ I learned that the number object translates strings into usable arthimetic value
 
 5.What did you learn about displaying results in the browser?
 
+I learned to use both getElementId + .innerHTML. GetelementId basically tells the complier to select the specified element and input the user's input there. Rather gets the element and replaces the text with the user's input 
+
+eg: 
+
+HTML : 
+
+<p id example>blah blah </p>
+
+Java: 
+
+document.getElementId("example") - selects our html id and sends the second part of .innerHTML's input there.
+
+Full : document.getElementId("example").innerHTML = "this text should replace "blah blah" "
+
