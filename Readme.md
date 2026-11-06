@@ -30,3 +30,27 @@ document.getElementId("example") - selects our html id and sends the second part
 
 Full : document.getElementId("example").innerHTML = "this text should replace "blah blah" "
 
+
+--- Built-in Objects and Methods Used
+
+Date
+- new Date()
+- toLocaleDateString()
+
+Number
+- Number()
+- Number.isNaN()
+- Number.isInteger()
+- toFixed()
+
+Global
+- isNaN()
+
+document (DOM)
+- document.getElementById()
+- .innerHTML
+- .value
+- .onclick
+
+
+![Finished page](finalwork.png)
